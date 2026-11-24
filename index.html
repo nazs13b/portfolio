@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<!-- Hallmark · pre-emit critique: P5 H5 E5 S5 R4 V5 · direction: Apple product page with mechanism visuals (pipeline, workflow canvas, SMS thread, call waveform) -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nazmus Sakib · Portfolio</title>
+<meta name="description" content="Portfolio of Nazmus Sakib, an AI automation builder and salesperson in Sydney: GoHighLevel systems, n8n workflows and AI sales agents.">
+<style>
+:root{
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --white:#fff; --grey:#f5f5f7; --grey-2:#e8e8ed; --hair:#d2d2d7;
+  --ink:#1d1d1f; --ink-2:#6e6e73; --ink-3:#86868b;
+  --black:#000; --night-1:#101012; --night-2:#1c1c1e; --night-3:#2c2c2e; --night-hair:#38383a; --night-ink:#f5f5f7; --night-ink-2:#a1a1a6;
+  --link:#0066cc; --link-night:#2997ff;
+  --g1:#0071e3; --g2:#7a5cff; --g3:#e5487d; --g4:#ff8a3d;
+  --ok:#30d158; --ai:#64a8ff;
+  --z-nav:10;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth;scroll-padding-top:56px}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;font-size:17px;line-height:1.47;letter-spacing:-.022em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{text-wrap:balance}
+p{text-wrap:pretty}
+.c{max-width:1024px;margin:0 auto;padding:0 22px}
+.cw{max-width:1240px;margin:0 auto;padding:0 22px}
+
+/* nav */
+nav.bar{position:sticky;top:0;z-index:var(--z-nav);background:rgba(251,251,253,.78);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08)}
+nav.bar .in{max-width:1024px;margin:0 auto;padding:0 22px;height:52px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+nav.bar .name{font-weight:600;font-size:19px;color:var(--ink);white-space:nowrap}
+nav.bar ul{list-style:none;margin:0;padding:0;display:flex;gap:24px;font-size:12px}
+nav.bar ul a{color:var(--ink);opacity:.8;white-space:nowrap}
+.pill{display:inline-block;font-size:12px;background:var(--g1);color:#fff;border-radius:980px;padding:5px 13px;white-space:nowrap}
+.pill:hover{text-decoration:none;background:#0077ed}
+@media (prefers-reduced-transparency:reduce){nav.bar{background:#fbfbfd;backdrop-filter:none}}
+
+.grad{background:linear-gradient(92deg,var(--g1) 0%,var(--g2) 38%,var(--g3) 72%,var(--g4) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* hero */
+.hero{text-align:center;padding:88px 22px 40px}
+.eyebrow{font-size:19px;font-weight:600;color:var(--ink-2);margin:0 0 8px}
+.hero h1{font-size:clamp(46px,8.2vw,96px);line-height:1.02;font-weight:700;letter-spacing:-.038em;margin:0 0 22px;overflow-wrap:anywhere}
+.hero .sub{font-size:clamp(19px,2.3vw,26px);line-height:1.3;font-weight:500;color:var(--ink-2);max-width:740px;margin:0 auto 28px;letter-spacing:-.012em}
+.ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.btn{display:inline-block;background:var(--g1);color:#fff;border-radius:980px;padding:12px 24px;font-size:17px;white-space:nowrap;transition:transform .1s}
+.btn:hover{text-decoration:none;background:#0077ed}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:var(--g1);box-shadow:inset 0 0 0 1px var(--g1)}
+.night .btn.ghost{color:var(--link-night);box-shadow:inset 0 0 0 1px var(--link-night)}
+
+/* pipeline visual */
+.pipe{margin:64px auto 0;max-width:1100px;background:var(--night-1);border-radius:32px;padding:34px 34px 30px;color:var(--night-ink);position:relative;overflow:hidden;text-align:left}
+.pipe::before{content:"";position:absolute;inset:-40% -10% auto;height:120%;background:radial-gradient(60% 50% at 50% 0%,rgba(0,113,227,.28),transparent 70%);pointer-events:none}
+.pipe-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;position:relative}
+.pipe-head b{font-size:15px;font-weight:600}
+.pipe-head span{font-size:13px;color:var(--night-ink-2)}
+.live{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ok);font-weight:600}
+.live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(48,209,88,.6);animation:ping 1.8s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(48,209,88,.55)}100%{box-shadow:0 0 0 10px rgba(48,209,88,0)}}
+.stages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:26px;position:relative}
+.stage{background:var(--night-2);border:1px solid var(--night-hair);border-radius:18px;padding:14px 14px 16px;min-height:178px;min-width:0}
+.stage h4{margin:0 0 2px;font-size:13px;font-weight:600;color:var(--night-ink)}
+.stage .who{font-size:11.5px;color:var(--night-ink-2);margin-bottom:12px}
+.stage .who.ai{color:var(--ai)}
+.deal{background:var(--night-3);border:1px solid transparent;border-radius:10px;padding:8px 10px;margin-top:7px;font-size:12.5px;line-height:1.3;animation:focus 7.5s infinite}
+.deal small{display:block;color:var(--night-ink-2);font-size:11px}
+.stage:nth-child(1) .deal{animation-delay:0s}.stage:nth-child(2) .deal{animation-delay:1.5s}.stage:nth-child(3) .deal{animation-delay:3s}.stage:nth-child(4) .deal{animation-delay:4.5s}.stage:nth-child(5) .deal{animation-delay:6s}
+.stage:nth-child(1) .deal + .deal{animation:none}
+@keyframes focus{0%{border-color:transparent;transform:none}4%{border-color:#64a8ff;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,113,227,.35)}18%{border-color:#64a8ff;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,113,227,.35)}24%,100%{border-color:transparent;transform:none;box-shadow:none}}
+.tag{display:inline-block;font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:99px;margin-top:5px}
+.tag.ai{background:rgba(100,168,255,.16);color:var(--ai)}
+.tag.ok{background:rgba(48,209,88,.16);color:var(--ok)}
+.pipe-foot{margin-top:16px;font-size:12px;color:#6e6e73;position:relative}
+
+/* numbers strip */
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:90px auto 0;max-width:1100px;padding:0 22px}
+.num{padding:4px 22px;border-left:1px solid var(--hair)}
+.num:first-child{border-left:0;padding-left:0}
+.num b{display:block;font-size:clamp(40px,5vw,64px);font-weight:700;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.num span{display:block;font-size:14px;color:var(--ink-2);margin-top:10px;line-height:1.35;max-width:22ch}
+
+/* chapters */
+.chapter{padding:130px 0}
+.chapter.grey{background:var(--grey)}
+.chapter.night{background:var(--black);color:var(--night-ink)}
+.chapter.night a{color:var(--link-night)}
+.kicker{font-size:19px;font-weight:600;margin:0 0 10px}
+.chapter h2{font-size:clamp(38px,5.8vw,72px);line-height:1.04;letter-spacing:-.036em;font-weight:700;margin:0 0 22px;max-width:920px;overflow-wrap:anywhere}
+.intro{font-size:clamp(19px,2vw,24px);line-height:1.38;color:var(--ink-2);max-width:740px;margin:0;font-weight:500;letter-spacing:-.012em}
+.night .intro{color:var(--night-ink-2)}
+.intro strong{color:var(--ink);font-weight:600}
+.night .intro strong{color:var(--night-ink)}
+.src{font-size:12px;color:var(--ink-3);margin-top:16px;letter-spacing:0}
+.night .src{color:#6e6e73}
+
+/* workflow canvas */
+.canvas{margin-top:60px;background:var(--night-1);border:1px solid var(--night-hair);border-radius:32px;padding:20px;position:relative;overflow:hidden;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:22px 22px}
+.canvas svg{display:block;width:100%;height:auto}
+.canvas .cap{position:absolute;left:28px;top:22px;font-size:13px;color:var(--night-ink-2)}
+.node rect{fill:#1c1c1e;stroke:#3a3a3c;stroke-width:1.2}
+.node.ai rect{stroke:#3b6fb6;fill:#0f1d30}
+.node.crm rect{stroke:#2f6b45;fill:#0f2117}
+.node .t{fill:#f5f5f7;font:600 15px var(--font)}
+.node .s{fill:#a1a1a6;font:400 12.5px var(--font)}
+.node.ai .s{fill:#9ccbff}
+.edge{fill:none;stroke:#48484a;stroke-width:2}
+.flowline{fill:none;stroke:url(#flowgrad);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:6 18;animation:dash 1.6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-48}}
+.pulse{fill:#fff}
+
+/* industries + capabilities */
+.two{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:72px;margin-top:80px;align-items:start}
+.ind h3,.caps h3{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--night-ink-2);margin:0 0 18px}
+.ind-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 14px;padding:16px 0;border-top:1px solid var(--night-hair)}
+.ind-row:last-of-type{border-bottom:1px solid var(--night-hair)}
+.ind-row b{font-size:19px;font-weight:600}
+.ind-row .n{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.ind-row p{grid-column:1/-1;margin:0;font-size:15px;color:var(--night-ink-2);line-height:1.45}
+.ind-row .bar{grid-column:1/-1;height:4px;border-radius:9px;background:var(--night-3);overflow:hidden;margin-top:6px}
+.ind-row .bar i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--g1),var(--g2),var(--g3));transform-origin:left;transform:scaleX(var(--w))}
+.caps ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.caps li{break-inside:avoid;padding:9px 0;border-top:1px solid var(--night-hair);font-size:15.5px;color:var(--night-ink)}
+.caps li small{display:block;font-size:13px;color:var(--night-ink-2)}
+
+/* AI sales split */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center;margin-top:70px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{padding:22px 0;border-top:1px solid var(--hair)}
+.steps li:last-child{border-bottom:1px solid var(--hair)}
+.steps .k{font-size:13px;font-weight:600;color:var(--ink-3)}
+.steps b{display:block;font-size:24px;letter-spacing:-.024em;margin:4px 0 6px}
+.steps p{margin:0;color:var(--ink-2);font-size:16px}
+.thread{background:var(--grey);border-radius:36px;padding:28px 22px 24px;max-width:430px;margin:0 auto;width:100%}
+.thread .hd{text-align:center;font-size:12.5px;color:var(--ink-3);margin-bottom:16px}
+.thread .hd b{display:block;font-size:15px;color:var(--ink)}
+.msg{max-width:78%;padding:9px 14px;border-radius:20px;font-size:15px;line-height:1.35;margin:6px 0;opacity:0;transform:translateY(8px);transition:opacity .5s,transform .5s}
+.msg.in{opacity:1;transform:none}
+.msg.me{background:#e9e9eb;color:var(--ink);border-bottom-left-radius:6px}
+.msg.bot{background:var(--g1);color:#fff;margin-left:auto;border-bottom-right-radius:6px}
+.msg.photo{background:#d9d9de;height:84px;width:120px;border-radius:16px;display:flex;align-items:flex-end;padding:8px;font-size:11px;color:#55555a}
+.sys{font-size:11.5px;color:var(--ink-3);text-align:center;margin:10px 0 4px;opacity:0;transition:opacity .5s}
+.sys.in{opacity:1}
+.sys b{color:var(--g1);font-weight:600}
+.illus{text-align:center;font-size:12px;color:var(--ink-3);margin-top:12px}
+
+/* call visual */
+.call{background:var(--white);border-radius:32px;padding:34px;margin-top:60px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:center}
+.wave{display:flex;align-items:center;gap:4px;height:120px}
+.wave i{flex:1;min-width:2px;border-radius:9px;background:linear-gradient(180deg,var(--g2),var(--g1));height:20%;animation:wv 1.4s ease-in-out infinite}
+@keyframes wv{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+.call .line{font-size:15px;color:var(--ink-2);margin:12px 0 0;line-height:1.45}
+.call .line b{color:var(--ink)}
+.slot{display:grid;gap:8px}
+.slot div{border:1px solid var(--hair);border-radius:14px;padding:12px 14px;font-size:15px;display:flex;justify-content:space-between;color:var(--ink-2)}
+.slot div.booked{border-color:var(--g1);background:#eef5ff;color:var(--ink)}
+.slot div.booked em{font-style:normal;color:var(--g1);font-weight:600}
+.slot div.busy{color:var(--ink-3);text-decoration:line-through}
+
+/* small builds list */
+.builds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 40px;margin-top:70px}
+.builds div{padding:22px 0;border-top:1px solid var(--hair)}
+.builds b{display:block;font-size:19px;letter-spacing:-.02em;margin-bottom:6px}
+.builds p{margin:0;font-size:15px;color:var(--ink-2)}
+.builds small{display:block;margin-top:8px;font-size:12.5px;color:var(--ink-3)}
+
+/* lead hub */
+.hub{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center;margin-top:70px}
+.ring{position:relative;width:100%;max-width:420px;aspect-ratio:1;margin:0 auto}
+.ring svg{width:100%;height:100%}
+.ring .center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.ring .center b{font-size:56px;letter-spacing:-.04em;line-height:1}
+.ring .center span{font-size:13px;color:var(--night-ink-2);margin-top:6px}
+.timer{fill:none;stroke:url(#flowgrad);stroke-width:6;stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;stroke-dasharray:597;animation:timer 12s linear infinite}
+@keyframes timer{from{stroke-dashoffset:597}to{stroke-dashoffset:0}}
+.seat{fill:#2c2c2e;stroke:#48484a}
+.seat.got{fill:#0a84ff;stroke:#64a8ff;animation:got 12s infinite}
+@keyframes got{0%,40%{fill:#2c2c2e;stroke:#48484a}50%,100%{fill:#0a84ff;stroke:#64a8ff}}
+.rules{list-style:none;margin:28px 0 0;padding:0}
+.rules li{padding:14px 0;border-top:1px solid var(--night-hair);font-size:16px;color:var(--night-ink-2)}
+.rules li b{color:var(--night-ink);font-weight:600}
+
+/* role line */
+.role{display:flex;flex-wrap:wrap;gap:6px 22px;margin:22px 0 0;font-size:15px;color:var(--ink)}
+.night .role{color:var(--night-ink)}
+.role span{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);margin-right:-14px;padding-top:2px}
+.night .role span{color:#8e8e93}
+
+/* experience timeline */
+.tl{margin-top:56px;border-top:1px solid var(--hair)}
+.tl-row{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;padding:30px 0;border-bottom:1px solid var(--hair)}
+.tl-row .when{font-size:15px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.tl-row h3{font-size:24px;letter-spacing:-.024em;margin:0 0 2px}
+.tl-row .at{font-size:15px;color:var(--ink-2);margin-bottom:12px}
+.tl-row ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:16px}
+.tl-row li{margin:5px 0}
+
+/* career track */
+.track{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative;margin-top:48px}
+.track::before{content:"";position:absolute;left:0;right:0;top:8px;height:3px;border-radius:3px;background:linear-gradient(90deg,#c7c7cc 0%,#c7c7cc 45%,var(--g1) 60%,var(--g2) 80%,var(--g3) 100%)}
+.tstep{position:relative;padding:28px 16px 0 0}
+.tstep::before{content:"";position:absolute;top:0;left:0;width:19px;height:19px;border-radius:50%;background:#fff;border:3px solid #c7c7cc}
+.tstep.ai::before{background:var(--g2);border-color:var(--g2)}
+.tstep.now::before{background:var(--g3);border-color:var(--g3);box-shadow:0 0 0 6px rgba(229,72,125,.18)}
+.tstep span{font-size:13px;color:var(--ink-3)}
+.tstep b{display:block;font-size:19px;letter-spacing:-.02em;margin-top:2px}
+.tstep small{display:block;font-size:14px;color:var(--ink-2)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px;margin-top:56px}
+.skills h3{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin:0 0 14px}
+.skills ul{list-style:none;margin:0;padding:0}
+.skills li{padding:8px 0;border-top:1px solid var(--hair);font-size:16px}
+
+/* selling */
+.quote{font-size:clamp(30px,4.2vw,54px);line-height:1.12;letter-spacing:-.034em;font-weight:700;max-width:1000px;margin:0}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 56px;margin-top:56px}
+.cols h3{font-size:24px;letter-spacing:-.024em;margin:0 0 8px}
+.cols p{margin:0;color:var(--ink-2)}
+
+/* contact */
+.contact{text-align:center;padding:140px 22px 120px}
+.contact h2{font-size:clamp(42px,7vw,88px);letter-spacing:-.038em;line-height:1.02;margin:0 0 20px;font-weight:700}
+.contact .ctas{margin-top:30px}
+footer.fine{background:var(--grey);font-size:12px;color:var(--ink-3);padding:18px 0 30px;letter-spacing:0}
+
+/* reveal (JS only) */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .ind-row .bar i{transform:scaleX(0);transition:transform 1.4s cubic-bezier(.16,1,.3,1)}
+.js .ind-row.in .bar i{transform:scaleX(var(--w))}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .msg,.sys{opacity:1!important;transform:none!important}
+  .js .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+@media (max-width:960px){
+  nav.bar ul{display:none}
+  .stages{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stage{min-height:0}
+  .nums{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 0}
+  .num:nth-child(3){border-left:0;padding-left:0}
+  .two,.split,.hub,.call,.cols{grid-template-columns:minmax(0,1fr);gap:44px}
+  .builds{grid-template-columns:minmax(0,1fr)}
+  .chapter{padding:96px 0}
+  .pipe{padding:24px 18px 22px;border-radius:26px}
+  .caps ul{columns:1}
+}
+@media (max-width:760px){ .track{grid-template-columns:minmax(0,1fr);gap:18px} .track::before{left:8px;right:auto;top:0;bottom:0;width:3px;height:auto;background:linear-gradient(180deg,#c7c7cc 0%,#c7c7cc 45%,var(--g1) 60%,var(--g2) 80%,var(--g3) 100%)} .tstep{padding:0 0 0 36px} .canvas{overflow-x:auto;padding-top:46px} .canvas svg{min-width:760px} .tl-row{grid-template-columns:minmax(0,1fr);gap:6px} .skills{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px} }
+@media (max-width:420px){ .stage:nth-child(5){grid-column:1/-1} .ctas .btn{width:100%} .call{padding:22px} }
+@media print{nav.bar{position:static}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav class="bar" aria-label="Sections"><div class="in">
+  <span class="name">Nazmus Sakib</span>
+  <ul>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="pill" href="Nazmus-Sakib-CV.pdf" download>Download CV</a>
+</div></nav>
+
+<header class="hero">
+  <p class="eyebrow">Portfolio · Nazmus Sakib</p>
+  <h1>Hi, I'm Naz.<br><span class="grad">I build AI that sells.</span></h1>
+  <p class="sub">I'm a salesperson who fell for AI in 2025. Now I sell and I build: this is a selection of the CRM systems, n8n workflows and AI sales agents I've designed, built and run in production.</p>
+  <div class="ctas"><a class="btn" href="#work">View my work</a><a class="btn ghost" href="Nazmus-Sakib-CV.pdf" download>Download CV</a></div>
+
+  <div class="pipe rv" role="img" aria-label="Illustration of a sales pipeline moving leads from new to installed, with AI handling qualification and quoting">
+    <div class="pipe-head"><b>A lead's journey through a sales system I built</b><span class="live">Running</span></div>
+    <div class="stages">
+      <div class="stage"><h4>New lead</h4><div class="who">Meta / web form</div>
+        <div class="deal">Battery enquiry<small>Parramatta NSW</small></div>
+        <div class="deal">Solar + battery<small>Ipswich QLD</small></div></div>
+      <div class="stage"><h4>Qualified</h4><div class="who ai">AI qualifier · SMS</div>
+        <div class="deal">Battery enquiry<small>3-phase · has solar</small><span class="tag ai">AI asked 6 questions</span></div></div>
+      <div class="stage"><h4>Quoted</h4><div class="who ai">AI quoter</div>
+        <div class="deal">Battery enquiry<small>Meter-box photo read</small><span class="tag ai">Quote drafted</span></div></div>
+      <div class="stage"><h4>Signed</h4><div class="who">Rep + AI closer</div>
+        <div class="deal">Battery enquiry<small>Contract signed</small><span class="tag ok">Won</span></div></div>
+      <div class="stage"><h4>Installed</h4><div class="who">Compliance · grid · install</div>
+        <div class="deal">Battery enquiry<small>Sale sent to Meta + Google</small><span class="tag ok">Done</span></div></div>
+    </div>
+    <div class="pipe-foot">Illustration of the flow. The stages and automations are real; the example lead is not.</div>
+  </div>
+</header>
+
+<section aria-label="My work in numbers" id="work">
+  <div class="nums">
+    <div class="num rv"><b data-count="359">359</b><span>GoHighLevel workflows across 5 businesses</span></div>
+    <div class="num rv"><b data-count="262">262</b><span>of them published and running now</span></div>
+    <div class="num rv"><b data-count="1953">1,953</b><span>n8n production runs, 93.2% successful</span></div>
+    <div class="num rv"><b>12+</b><span>sales reps working leads through a hub I built</span></div>
+  </div>
+</section>
+
+<!-- GHL -->
+<section class="chapter night" id="ghl" style="margin-top:120px">
+  <div class="cw">
+    <p class="kicker rv">Project 01 · GoHighLevel</p>
+    <h2 class="rv">Whole businesses,<br>running inside one CRM.</h2>
+    <p class="intro rv">I designed and built complete GoHighLevel systems for five businesses: <strong>pipelines, custom fields, workflows, AI bots, ad tracking and API integrations</strong>, from the first ad click to the finished job.</p>
+    <p class="role rv"><span>My role</span>Solution design, build and ongoing support<span>Tools</span>GoHighLevel, webhooks, v2 API<span>When</span>2025 to now</p>
+
+    <div class="canvas rv" role="img" aria-label="Workflow diagram: a lead form triggers round-robin assignment and an AI qualifier; qualified leads go to the AI quoter and contract, others to nurture; signed deals go to compliance, install and an offline conversion">
+      <span class="cap">One of the lead workflows, simplified</span>
+      <svg viewBox="0 0 1160 420" preserveAspectRatio="xMidYMid meet">
+        <defs><linearGradient id="flowgrad" x1="0" x2="1"><stop offset="0" stop-color="#0071e3"/><stop offset=".5" stop-color="#7a5cff"/><stop offset="1" stop-color="#e5487d"/></linearGradient></defs>
+        <!-- edges -->
+        <path class="edge" d="M200 210 C 230 210, 240 210, 270 210"/>
+        <path class="edge" d="M450 210 C 480 210, 490 210, 520 210"/>
+        <path class="edge" d="M700 210 C 730 210, 740 110, 770 110"/>
+        <path class="edge" d="M700 210 C 730 210, 740 310, 770 310"/>
+        <path class="edge" d="M950 110 C 975 110, 975 110, 1000 110"/>
+        <path class="flowline" d="M200 210 C 230 210, 240 210, 270 210"/>
+        <path class="flowline" d="M450 210 C 480 210, 490 210, 520 210"/>
+        <path class="flowline" d="M700 210 C 730 210, 740 110, 770 110"/>
+        <path class="flowline" d="M950 110 C 975 110, 975 110, 1000 110"/>
+        <!-- nodes -->
+        <g class="node"><rect x="20" y="168" width="180" height="84" rx="16"/><text class="t" x="40" y="204">Lead form</text><text class="s" x="40" y="228">Meta · website · call</text></g>
+        <g class="node"><rect x="270" y="168" width="180" height="84" rx="16"/><text class="t" x="290" y="204">Assign</text><text class="s" x="290" y="228">Round-robin · state tag</text></g>
+        <g class="node ai"><rect x="520" y="168" width="180" height="84" rx="16"/><text class="t" x="540" y="204">AI qualifier</text><text class="s" x="540" y="228">SMS + WhatsApp</text></g>
+        <g class="node ai"><rect x="770" y="68" width="180" height="84" rx="16"/><text class="t" x="790" y="104">AI quoter</text><text class="s" x="790" y="128">Photos → product + price</text></g>
+        <g class="node"><rect x="770" y="268" width="180" height="84" rx="16"/><text class="t" x="790" y="304">Nurture</text><text class="s" x="790" y="328">SMS #1–#3 · reminders</text></g>
+        <g class="node crm"><rect x="1000" y="68" width="140" height="84" rx="16"/><text class="t" x="1018" y="104">Contract</text><text class="s" x="1018" y="128">Sign → install</text></g>
+        <circle class="pulse" r="4"><animateMotion dur="3.2s" repeatCount="indefinite" path="M200 210 C 230 210, 240 210, 270 210 L 450 210 C 480 210, 490 210, 520 210 L 700 210 C 730 210, 740 110, 770 110 L 950 110 C 975 110, 975 110, 1000 110"/></circle>
+      </svg>
+    </div>
+
+    <div class="two">
+      <div class="ind">
+        <h3>Built for 5 businesses</h3>
+        <div class="ind-row rv" style="--w:1"><b>National solar &amp; battery retailer</b><span class="n">266</span><p>Lead routing for 23 reps, AI qualifier, quoter and closer, compliance and grid paperwork, install booking by state, Meta and Google offline conversions.</p><div class="bar"><i></i></div></div>
+        <div class="ind-row rv" style="--w:.165"><b>Portrait photography studio</b><span class="n">44</span><p>A 15-stage client journey: genre intake, AI call, discovery, shoot booking, supplier texts, sales session, pickup and referrals.</p><div class="bar"><i></i></div></div>
+        <div class="ind-row rv" style="--w:.083"><b>Electrical contractor</b><span class="n">22</span><p>AI voice and SMS intros, qualifier to closer, contracts chased at 3 and 7 days, auto install deals.</p><div class="bar"><i></i></div></div>
+        <div class="ind-row rv" style="--w:.064"><b>My own agency</b><span class="n">17</span><p>Fast-5 lead nurture, no-show recovery, review requests, stale-lead revival.</p><div class="bar"><i></i></div></div>
+        <div class="ind-row rv" style="--w:.038"><b>Outdoor construction</b><span class="n">10</span><p>AI voice call on every new lead, ServiceM8 sync, after-hours text.</p><div class="bar"><i></i></div></div>
+        <div class="src">Workflow counts from each account's GoHighLevel API, 24 Nov 2026. Client names left out.</div>
+      </div>
+      <div class="caps rv">
+        <h3>What I set up</h3>
+        <ul>
+          <li>Pipelines &amp; stages<small>Sales, compliance, install</small></li>
+          <li>Custom fields &amp; values<small>Quote numbers, phase, state</small></li>
+          <li>Round-robin assignment<small>Per-rep warm-lead rules</small></li>
+          <li>Conversation AI<small>SMS and WhatsApp bots</small></li>
+          <li>Calendars &amp; booking<small>Reminders, no-shows</small></li>
+          <li>Contracts &amp; documents<small>Templates, signed checks</small></li>
+          <li>Ad attribution<small>Meta CAPI, Google offline</small></li>
+          <li>API &amp; webhooks<small>Private Integrations, v2 API</small></li>
+          <li>Smart lists &amp; tags<small>Disqualifiers, states</small></li>
+          <li>White-label setup<small>Sub-accounts for agency clients</small></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI sales -->
+<section class="chapter" id="ai">
+  <div class="cw">
+    <p class="kicker rv">Project 02 · AI sales agents</p>
+    <h2 class="rv">Three agents. One job:<br>get the deal signed.</h2>
+    <p class="intro rv">I wrote three AI agents in TypeScript that plug into any GoHighLevel account through the API and work every inbound lead, day and night.</p>
+    <p class="role rv"><span>My role</span>Design, prompt engineering, build, live tuning<span>Tools</span>TypeScript, LLMs, GoHighLevel API<span>Channels</span>SMS, WhatsApp, voice</p>
+    <div class="split">
+      <ol class="steps rv">
+        <li><span class="k">01 · Qualifier</span><b>Asks what a good rep would.</b><p>Collects the details and meter-box photos, checks the service area and answers questions.</p></li>
+        <li><span class="k">02 · Quoter</span><b>Reads the photos, writes the quote.</b><p>Picks the right product and price from the catalogue and fills the CRM quote template.</p></li>
+        <li><span class="k">03 · Closer</span><b>Follows up until it lands.</b><p>Handles early objections, chases the signature and books the appointment.</p></li>
+      </ol>
+      <div>
+        <div class="thread" id="thread" aria-label="Illustrative SMS conversation between a customer and the AI qualifier">
+          <div class="hd"><b>Solar battery enquiry</b>Text message</div>
+          <div class="msg bot">Hi Sarah, thanks for your enquiry about a home battery. Do you already have solar panels?</div>
+          <div class="msg me">Yes, about 6.6kW on the roof</div>
+          <div class="msg bot">Great. Could you send a photo of your meter box? It tells us whether you're single or three phase.</div>
+          <div class="msg photo">meter-box.jpg</div>
+          <div class="sys">Quoter read the photo · <b>single phase</b> · package matched</div>
+          <div class="msg bot">Thanks! Your quote is ready. Would Tuesday 2:30 suit a quick call to go through it?</div>
+          <div class="msg me">Tuesday works 👍</div>
+          <div class="sys">Booked in the calendar · deal moved to <b>Quoted</b></div>
+        </div>
+        <div class="illus">Illustrative conversation, the same shape as the live one.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- n8n -->
+<section class="chapter grey" id="n8n">
+  <div class="cw">
+    <p class="kicker rv">Project 03 · n8n</p>
+    <h2 class="rv">An AI caller that books<br>before it hangs up.</h2>
+    <p class="intro rv">One of <strong>15 n8n workflows</strong> I run, with <strong>1,953 production runs</strong> at 93.2% success. During the call the agent checks the real calendar, finds a free slot and books it. The appointment exists before the call ends.</p>
+    <p class="role rv"><span>My role</span>Built and maintain all 15 workflows<span>Tools</span>n8n, OpenAI, Google Calendar, Twilio<span>Source</span>n8n Insights, 24 Nov 2026</p>
+
+    <div class="call rv" aria-label="Illustration of an AI phone call checking calendar availability and booking a slot">
+      <div>
+        <div class="wave" aria-hidden="true"></div>
+        <p class="line"><b>Customer:</b> "Can someone come out Thursday arvo?"</p>
+        <p class="line"><b>AI caller:</b> "Thursday I've got 3:30 free. Shall I lock that in?"</p>
+      </div>
+      <div class="slot" aria-label="Calendar slots">
+        <div class="busy"><span>Thu 1:00 pm</span><span>Busy</span></div>
+        <div class="busy"><span>Thu 2:00 pm</span><span>Busy</span></div>
+        <div class="booked"><span>Thu 3:30 pm</span><em>Booked by AI</em></div>
+        <div><span>Thu 4:30 pm</span><span>Free</span></div>
+      </div>
+    </div>
+
+    <div class="builds">
+      <div class="rv"><b>Five-agent proposal reviewer</b><p>Reads a proposal PDF and sends it to specialist agents for panels, PV, inverter, battery and pricing, then writes the verdict to the CRM.</p><small>19 nodes · OpenAI · GoHighLevel</small></div>
+      <div class="rv"><b>AI pipeline router</b><p>Reads each lead event, decides where the deal really stands and moves the stage and fields to match.</p><small>29 nodes · 5 routes</small></div>
+      <div class="rv"><b>CRM batch dialer</b><p>Works through a whole pipeline stage in paced batches and starts an AI call for each lead.</p><small>11 nodes · loop + wait</small></div>
+      <div class="rv"><b>Email to CRM agent</b><p>Reads new Outlook emails and finds, updates or creates the matching opportunity.</p><small>Tool-calling agent</small></div>
+      <div class="rv"><b>Conversation summariser</b><p>Turns a long SMS and email history into a one-paragraph briefing for the rep.</p><small>Conversations API · OpenAI</small></div>
+      <div class="rv"><b>Contract quote sync</b><p>When a contract is sent, it writes the quotation number into a custom field.</p><small>Webhook · REST · code</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- lead hub -->
+<section class="chapter night" id="hub">
+  <div class="cw">
+    <p class="kicker rv">Project 04 · Lead hub</p>
+    <h2 class="rv">Fair leads for a whole<br>sales team. Automatically.</h2>
+    <p class="role rv"><span>My role</span>Designed and built end to end<span>Tools</span>Node.js, GoHighLevel API<span>Users</span>12+ reps and admins</p>
+    <div class="hub">
+      <div class="ring rv" role="img" aria-label="Illustration of a timed lead round dealing leads to twelve reps">
+        <svg viewBox="0 0 220 220">
+          <circle cx="110" cy="110" r="95" fill="none" stroke="#2c2c2e" stroke-width="6"/>
+          <circle class="timer" cx="110" cy="110" r="95"/>
+          <g id="seats"></g>
+        </svg>
+        <div class="center"><b>30</b><span>leads this round<br>12 reps · 2 each + merit</span></div>
+      </div>
+      <div>
+        <p class="intro rv">A tool built into the CRM for a team of 12+ reps. Reps request leads and admins approve them. A <strong>timed lead pool</strong> deals leads out evenly in rounds, with bonus leads for the reps who close.</p>
+        <ul class="rules rv">
+          <li><b>9 PM hygiene check.</b> Every night it flags any pipeline that isn't kept clean.</li>
+          <li><b>Five flags block new leads</b> until the rep fixes their pipeline.</li>
+          <li><b>Callback limits</b> stop leads piling up unworked.</li>
+          <li><b>Throttled API use</b> so the CRM is never overloaded.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- about -->
+<section class="chapter" id="about">
+  <div class="cw">
+    <p class="kicker rv">About me</p>
+    <p class="quote rv">I build for salespeople because <span class="grad">I am one.</span> I close high-ticket solar and battery deals by phone, text and in person, so I know where a deal actually gets lost.</p>
+    <div class="cols">
+      <div class="rv"><h3>My path</h3><p>I studied Civil Engineering at Western Sydney University, then went into sales and never looked back: first face-to-face sales at Creative Activation, then high-ticket deals at a national solar and battery retailer from 2024. In 2025 I got into AI. It started with automating my own sales work and grew into building complete CRM systems and AI agents for whole teams.</p></div>
+      <div class="rv"><h3>How I work</h3><p>I start with a scoping call, design the solution, build it in GoHighLevel, n8n or code, ship it, then keep improving it on live feedback. I use Claude Code every day to build faster.</p></div>
+      <div class="rv"><h3>Selling and building</h3><p>I still do both every day. Selling keeps my builds honest, and building makes my selling faster. That's the mix I bring to a team.</p></div>
+      <div class="rv"><h3>What I'm looking for</h3><p>A role where I build AI automation that real teams depend on, and talk to the people who use it. Remote or Sydney.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- experience -->
+<section class="chapter grey" id="experience">
+  <div class="cw">
+    <p class="kicker rv">Experience</p>
+    <h2 class="rv">Where I've done this.</h2>
+    <div class="track rv" aria-label="Career track">
+      <div class="tstep"><span>2021</span><b>B. Engineering (Civil)</b><small>Western Sydney University</small></div>
+      <div class="tstep"><span>After uni</span><b>Creative Activation</b><small>Face-to-face sales</small></div>
+      <div class="tstep"><span>2024</span><b>Aussie Solar Batteries</b><small>High-ticket sales</small></div>
+      <div class="tstep ai"><span>2025</span><b>Into AI</b><small>CRM, n8n, AI agents</small></div>
+      <div class="tstep now"><span>Now</span><b>Selling + building</b><small>Both, every day</small></div>
+    </div>
+    <div class="tl">
+<div class="tl-row rv"><div class="when">2024 – now</div><div><h3>Sales Consultant &amp; CRM Automation Lead</h3><div class="at">Aussie Solar Batteries · Sydney</div>
+        <li>Close high-ticket residential solar and battery deals by phone, text and in person.</li>
+        <li>Help run the sales pipeline and its rules for a team of 12+ reps.</li>
+        <li>Built the team's lead hub and automated the company CRM: 266 GoHighLevel workflows.</li></ul></div></div>
+      <div class="tl-row rv"><div class="when">2025 – now</div><div><h3>Independent AI Automation Consultant</h3><div class="at">Remote clients · alongside sales</div><ul>
+        <li>Built full GoHighLevel systems for a photography studio, an electrical contractor, a construction company and an agency.</li>
+        <li>Built 15 n8n workflows in production: 1,953 runs at 93.2% success.</li>
+        <li>Wrote AI qualifier, quoter and closer agents that work leads over SMS, WhatsApp and voice.</li></ul></div></div>
+      <div class="tl-row rv"><div class="when">Before 2024</div><div><h3>Sales</h3><div class="at">Creative Activation · Sydney</div><ul>
+        <li>Sold directly to customers on activation campaigns, building the face-to-face, objection-handling and closing skills I use today.</li></ul></div></div>
+      <div class="tl-row rv"><div class="when">Education</div><div><h3>Bachelor of Engineering (Civil) · Western Sydney University</h3><div class="at">2021 · earlier: Diploma of Engineering, Insearch (UTS pathway), 2016</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- skills -->
+<section class="chapter" id="skills">
+  <div class="cw">
+    <p class="kicker rv">Skills</p>
+    <h2 class="rv">What I work with.</h2>
+    <div class="skills">
+      <div class="rv"><h3>CRM</h3><ul><li>GoHighLevel</li><li>Pipelines &amp; workflows</li><li>Conversation AI</li><li>Calendars &amp; contracts</li><li>Meta CAPI &amp; Google offline</li></ul></div>
+      <div class="rv"><h3>Automation</h3><ul><li>n8n</li><li>Webhooks &amp; REST APIs</li><li>Google Workspace</li><li>Twilio, Outlook, Notion</li><li>ServiceM8, Firecrawl</li></ul></div>
+      <div class="rv"><h3>AI</h3><ul><li>AI agents &amp; tool calling</li><li>Multi-agent flows</li><li>Prompt design</li><li>Voice AI</li><li>OpenAI, Claude, Claude Code</li></ul></div>
+      <div class="rv"><h3>Sales &amp; code</h3><ul><li>High-ticket closing</li><li>Pipeline management</li><li>Client scoping</li><li>TypeScript, Node, Python</li><li>PostgreSQL, Git, Linux</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact grey" id="contact" style="background:var(--grey)">
+  <p class="kicker rv">Contact</p>
+  <h2 class="rv">Let's talk about<br><span class="grad">the next role.</span></h2>
+  <p class="intro rv" style="margin:0 auto">Carlingford, Sydney · Full working rights in Australia</p>
+  <div class="ctas rv"><a class="btn" href="mailto:sakiboisc@gmail.com">sakiboisc@gmail.com</a><a class="btn ghost" href="tel:+61469851652">0469 851 652</a><a class="btn ghost" href="Nazmus-Sakib-CV.pdf" download>Download CV</a></div>
+</section>
+
+<footer class="fine"><div class="c">Portfolio of Nazmus Sakib. Numbers come from live systems on 24 Nov 2026. Illustrations show how the systems work. Client names are left out on purpose.</div></footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var staticMode = /static/.test(location.search);
+  // waveform bars
+  var w=document.querySelector('.wave'); if(w){for(var i=0;i<48;i++){var b=document.createElement('i');b.style.height=(25+Math.round(70*Math.abs(Math.sin(i*0.55))))+'%';b.style.animationDelay=(-(i%12)*0.11)+'s';w.appendChild(b);}}
+  // seats around ring
+  var g=document.getElementById('seats');
+  if(g){var ns='http://www.w3.org/2000/svg';for(var k=0;k<12;k++){var a=(k/12)*Math.PI*2-Math.PI/2;var c=document.createElementNS(ns,'circle');c.setAttribute('cx',110+95*Math.cos(a));c.setAttribute('cy',110+95*Math.sin(a));c.setAttribute('r',9);c.setAttribute('class','seat got');c.style.animationDelay=(k*0.35)+'s';g.appendChild(c);}}
+  // thread messages: show all in static/reduced mode, else play when visible
+  var thread=document.getElementById('thread');
+  var items=thread?thread.querySelectorAll('.msg,.sys'):[];
+  function showAll(){items.forEach(function(e){e.classList.add('in')});}
+  if(staticMode||reduce||!('IntersectionObserver' in window)){showAll();}
+  else{
+    var played=false;
+    var tio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!played){played=true;items.forEach(function(el,ix){setTimeout(function(){el.classList.add('in')},ix*700)});}})},{threshold:.35});
+    tio.observe(thread);
+  }
+  function countUp(n){var end=+n.dataset.count,t0=null;function step(ts){if(t0===null)t0=ts;var p=Math.min(1,(ts-t0)/1400);n.textContent=Math.round(end*(1-Math.pow(1-p,4))).toLocaleString('en-AU');if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+  if(staticMode||!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('js');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);
+    var n=e.target.querySelector('[data-count]'); if(n&&!reduce){countUp(n);}
+  }})},{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
